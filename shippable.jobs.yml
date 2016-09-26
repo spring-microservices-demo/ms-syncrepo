@@ -10,3 +10,15 @@ jobs:
     steps:
       - IN: ms-eureka-manifest-job
       - IN: aws-cluster
+
+  - name: ms-catalog-manifest-job
+    type: manifest
+    steps:
+      - IN: cntr-catalog
+      - IN: docker-options-catalog
+
+  - name: ms-catalog-deploy-job
+    type: deploy
+    steps:
+      - IN: ms-catalog-manifest-job
+      - IN: aws-cluster

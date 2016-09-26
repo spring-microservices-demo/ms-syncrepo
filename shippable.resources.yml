@@ -20,3 +20,18 @@ resources:
       portMappings:                             #optional
         - "8761:8761"
       publishAllPorts : true
+
+  - name: cntr-catalog                               #required
+    type: image                                  #required
+    integration: myregistry                        #required
+    pointer:
+      sourceName: "hrishi/ms_catalog"                    #required
+    seed: 
+      versionName: "latest"                    #optional
+
+  - name: docker-options-catalog
+    type: dockerOptions                      #required
+    version:
+      portMappings:                             #optional
+        - ":8080"
+      publishAllPorts : true
