@@ -75,7 +75,7 @@ resources:
     type: image                                  
     integration: myregistry                        
     pointer:
-      sourceName: "hrishi/ms_turbine"                    
+      sourceName: "hrishi/ms_turbine-server"                    
     seed:
       versionName: "latest"                    
 
@@ -101,3 +101,4 @@ resources:
       portMappings:                             
         - "8080:8080"
       publishAllPorts : true
+      
