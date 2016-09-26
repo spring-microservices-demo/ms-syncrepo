@@ -12,6 +12,8 @@ resources:
     integration: myregistry                        
     pointer:
       sourceName: "hrishi/ms_catalog"                    
+    seed: 
+      versionName: "latest"                    
 
   - name: docker-options-catalog
     type: dockerOptions                      
