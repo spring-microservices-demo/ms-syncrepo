@@ -1,0 +1,26 @@
+resources:
+  - name: gcr-cluster                              #required
+    type: cluster                               #required
+    integration: ms-hrishi-gcr         #required
+    pointer:
+      sourceName : "ms-demo-cluster"                   #required
+      region: "asia-east1-a"
+
+  - name: cntr-eureka                               #required
+    type: image                                  #required
+    integration: hcl-registry                        #required
+    pointer:
+      sourceName: "dockerregistry.hclets.com/ms_eureka"                    #required
+    seed:
+      versionName: "latest"                    #optional
+
+  - name: docker-options-eureka                           #required
+    type: dockerOptions                      #required
+    version:
+      portMappings:                             #optional
+        - "8761:8761"
+      publishAllPorts : true
+      #cmd:
+      #  - /usr/bin/java -Xmx400m -Xms400m -jar microservice-demo-eureka-server-0.0.1-SNAPSHOT.jar
+      #user: <string>                            # For GKE, this should be the UID (a number)
+
