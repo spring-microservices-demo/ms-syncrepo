@@ -4,3 +4,9 @@ jobs:
     steps:
       - IN: cntr-eureka
       - IN: docker-options-eureka
+
+  - name: ms-eureka-deploy-job
+    type: deploy
+    steps:
+      - IN: ms-eureka-manifest-job
+      - IN: aws-cluster

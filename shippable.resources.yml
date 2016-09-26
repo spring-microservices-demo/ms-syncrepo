@@ -1,10 +1,10 @@
 resources:
-  - name: gcr-cluster                              #required
+  - name: aws-cluster                              #required
     type: cluster                               #required
-    integration: ms-hrishi-gcr         #required
+    integration: AWS-Int         #required
     pointer:
       sourceName : "ms-demo-cluster"                   #required
-      region: "asia-east1-a"
+      region: "us-west-2"
 
   - name: cntr-eureka                               #required
     type: image                                  #required
