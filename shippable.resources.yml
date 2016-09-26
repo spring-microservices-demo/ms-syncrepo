@@ -19,5 +19,5 @@ resources:
     type: dockerOptions                      
     version:
       portMappings:                             
-        - "1010:1010"
+        - ":8080"
       publishAllPorts : true
