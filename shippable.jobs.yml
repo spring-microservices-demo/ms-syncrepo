@@ -4,6 +4,8 @@ jobs:
     type: manifest
     steps:
       - IN: cntr-catalog
+      - TASK: managed
+
 
   - name: ms-catalog-deploy-job
     type: deploy

@@ -6,16 +6,12 @@ resources:
       sourceName : "default"                   
       region: "us-west-2"
 
-
-
 #Resource Configuration for Catalog. 
   - name: cntr-catalog                               
     type: image                                  
     integration: myregistry                        
     pointer:
       sourceName: "hrishi/ms_catalog"                    
-    seed: 
-      versionName: "latest"                    
 
   - name: docker-options-catalog
     type: dockerOptions                      
