@@ -4,12 +4,12 @@ jobs:
     type: manifest
     steps:
       - IN: cntr-catalog
-        versionName: latest
-      - IN: docker-options-catalog
 
   - name: ms-catalog-deploy-job
     type: deploy
     steps:
       - IN: ms-catalog-manifest-job
+      - IN: docker-options-catalog
       - IN: aws-cluster
-
+      - TASK: managed
+        deployMethod: upgrade
