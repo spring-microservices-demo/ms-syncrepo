@@ -1,4 +1,5 @@
 jobs:
+# Configuration for eureka service
   - name: ms-eureka-manifest-job
     type: manifest
     steps:
@@ -11,6 +12,7 @@ jobs:
       - IN: ms-eureka-manifest-job
       - IN: aws-cluster
 
+# Configuration for catalog service
   - name: ms-catalog-manifest-job
     type: manifest
     steps:
@@ -21,4 +23,56 @@ jobs:
     type: deploy
     steps:
       - IN: ms-catalog-manifest-job
+      - IN: aws-cluster
+
+# Configuration for customer service
+  - name: ms-customer-manifest-job
+    type: manifest
+    steps:
+      - IN: cntr-customer
+      - IN: docker-options-customer
+
+  - name: ms-customer-deploy-job
+    type: deploy
+    steps:
+      - IN: ms-customer-manifest-job
+      - IN: aws-cluster
+
+# Configuration for order service
+  - name: ms-order-manifest-job
+    type: manifest
+    steps:
+      - IN: cntr-order
+      - IN: docker-options-order
+
+  - name: ms-order-deploy-job
+    type: deploy
+    steps:
+      - IN: ms-order-manifest-job
+      - IN: aws-cluster
+
+# Configuration for zuul service
+  - name: ms-zuul-manifest-job
+    type: manifest
+    steps:
+      - IN: cntr-zuul
+      - IN: docker-options-zuul
+
+  - name: ms-zuul-deploy-job
+    type: deploy
+    steps:
+      - IN: ms-zuul-manifest-job
+      - IN: aws-cluster
+
+# Configuration for turbine service
+  - name: ms-turbine-manifest-job
+    type: manifest
+    steps:
+      - IN: cntr-turbine
+      - IN: docker-options-turbine
+
+  - name: ms-turbine-deploy-job
+    type: deploy
+    steps:
+      - IN: ms-turbine-manifest-job
       - IN: aws-cluster
