@@ -6,21 +6,7 @@ resources:
       sourceName : "default"                   
       region: "us-west-2"
 
-#Resource Configuration for Eureka. 
-  - name: cntr-eureka                               
-    type: image                                  
-    integration: myregistry                        
-    pointer:
-      sourceName: "hrishi/ms_eureka"                    
-    seed:
-      versionName: "latest"                    
 
-  - name: docker-options-eureka                           
-    type: dockerOptions                      
-    version:
-      portMappings:                             
-        - "8761:8761"
-      publishAllPorts : true
 
 #Resource Configuration for Catalog. 
   - name: cntr-catalog                               
@@ -37,68 +23,3 @@ resources:
       portMappings:                             
         - "1010:1010"
       publishAllPorts : true
-
-#Resource Configuration for Customer. 
-  - name: cntr-customer                               
-    type: image                                  
-    integration: myregistry                        
-    pointer:
-      sourceName: "hrishi/ms_customer"                    
-    seed:
-      versionName: "latest"                    
-
-  - name: docker-options-customer                           
-    type: dockerOptions                      
-    version:
-      portMappings:                             
-        - ":8080"
-      publishAllPorts : true
-
-#Resource Configuration for Order. 
-  - name: cntr-order                               
-    type: image                                  
-    integration: myregistry                        
-    pointer:
-      sourceName: "hrishi/ms_order"                    
-    seed:
-      versionName: "latest"                    
-
-  - name: docker-options-order                           
-    type: dockerOptions                      
-    version:
-      portMappings:                             
-        - ":8080"
-      publishAllPorts : true
-
-#Resource Configuration for turbine. 
-  - name: cntr-turbine                               
-    type: image                                  
-    integration: myregistry                        
-    pointer:
-      sourceName: "hrishi/ms_turbine-server"                    
-    seed:
-      versionName: "latest"                    
-
-  - name: docker-options-turbine                           
-    type: dockerOptions                      
-    version:
-      portMappings:                             
-        - "8989:8989"
-      publishAllPorts : true
-
-#Resource Configuration for Zuul. 
-  - name: cntr-zuul                               
-    type: image                                  
-    integration: myregistry                        
-    pointer:
-      sourceName: "hrishi/ms_zuul"                    
-    seed:
-      versionName: "latest"                    
-
-  - name: docker-options-zuul                           
-    type: dockerOptions                      
-    version:
-      portMappings:                             
-        - "8080:8080"
-      publishAllPorts : true
-      
