@@ -4,6 +4,7 @@ jobs:
     type: manifest
     steps:
       - IN: cntr-catalog
+      versionName:latest
       - IN: docker-options-catalog
 
   - name: ms-catalog-deploy-job
