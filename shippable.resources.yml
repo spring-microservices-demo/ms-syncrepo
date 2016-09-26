@@ -3,7 +3,7 @@ resources:
     type: cluster                               #required
     integration: AWS-Int         #required
     pointer:
-      sourceName : "ms-demo-cluster"                   #required
+      sourceName : "default"                   #required
       region: "us-west-2"
 
   - name: cntr-eureka                               #required
