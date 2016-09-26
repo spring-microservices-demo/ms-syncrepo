@@ -8,9 +8,9 @@ resources:
 
   - name: cntr-eureka                               #required
     type: image                                  #required
-    integration: hcl-registry                        #required
+    integration: myregistry                        #required
     pointer:
-      sourceName: "dockerregistry.hclets.com/ms_eureka"                    #required
+      sourceName: "hrishi/ms_eureka"                    #required
     seed:
       versionName: "latest"                    #optional
 
