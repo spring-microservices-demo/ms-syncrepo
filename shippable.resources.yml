@@ -20,4 +20,6 @@ resources:
     version:
       portMappings:                             
         - ":8080"
+      memory: 2048                         #optional, in MiB
+      cpuShares: 1                       #optional
       publishAllPorts : true
