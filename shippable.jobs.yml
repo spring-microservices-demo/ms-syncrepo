@@ -15,3 +15,20 @@ jobs:
       - IN: aws-cluster
       - TASK: managed
         deployMethod: upgrade
+
+# Configuration for customer service
+  - name: ms-customer-manifest-job
+    type: manifest
+    steps:
+      - IN: cntr-customer
+      - TASK: managed
+
+
+  - name: ms-customer-deploy-job
+    type: deploy
+    steps:
+      - IN: ms-customer-manifest-job
+      - IN: docker-options-customer
+      - IN: aws-cluster
+      - TASK: managed
+        deployMethod: upgrade

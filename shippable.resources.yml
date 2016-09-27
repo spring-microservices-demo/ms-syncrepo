@@ -20,6 +20,24 @@ resources:
     version:
       portMappings:                             
         - ":8080"
-      memory: 2048                         #optional, in MiB
+      memory: 2000                         #optional, in MiB
+      cpuShares: 1                       #optional
+      publishAllPorts : true
+
+#Resource Configuration for Customer. 
+  - name: cntr-customer                               
+    type: image                                  
+    integration: myregistry                        
+    pointer:
+      sourceName: "hrishi/ms_customer"                    
+    seed: 
+      versionName: "latest"                    
+
+  - name: docker-options-customer
+    type: dockerOptions                      
+    version:
+      portMappings:                             
+        - ":8080"
+      memory: 2000                         #optional, in MiB
       cpuShares: 1                       #optional
       publishAllPorts : true
