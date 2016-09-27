@@ -32,3 +32,19 @@ jobs:
       - IN: aws-cluster
       - TASK: managed
         deployMethod: upgrade
+
+# Configuration for Order service
+  - name: ms-order-manifest-job
+    type: manifest
+    steps:
+      - IN: cntr-order
+      - TASK: managed
+
+  - name: ms-order-deploy-job
+    type: deploy
+    steps:
+      - IN: ms-order-manifest-job
+      - IN: docker-options-order
+      - IN: aws-cluster
+      - TASK: managed
+        deployMethod: upgrade

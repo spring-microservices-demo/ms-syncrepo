@@ -41,3 +41,21 @@ resources:
       memory: 2000                         #optional, in MiB
       cpuShares: 1                       #optional
       publishAllPorts : true
+
+#Resource Configuration for Order. 
+  - name: cntr-order                               
+    type: image                                  
+    integration: myregistry                        
+    pointer:
+      sourceName: "hrishi/ms_order"                    
+    seed: 
+      versionName: "latest"                    
+
+  - name: docker-options-order
+    type: dockerOptions                      
+    version:
+      portMappings:                             
+        - ":8080"
+      memory: 2000                         #optional, in MiB
+      cpuShares: 1                       #optional
+      publishAllPorts : true
